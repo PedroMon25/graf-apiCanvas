@@ -6,27 +6,30 @@ function draw() {
 
         const ctx = canvas.getContext("2d");
 
-        // Primer grupo de líneas
+        // Primer arco: semicírculo superior
         ctx.beginPath();
-        ctx.moveTo(20, 20);
-        ctx.lineTo(100, 100);
-        ctx.lineTo(180, 20);
+        ctx.arc(60, 60, 40, 0, Math.PI, true);
         ctx.stroke();
 
-        // Segundo grupo de líneas
+        // Segundo arco: semicírculo inferior
         ctx.beginPath();
-        ctx.moveTo(20, 150);
-        ctx.lineTo(80, 100);
-        ctx.lineTo(140, 150);
-        ctx.lineTo(200, 100);
-        ctx.lineTo(260, 150);
+        ctx.arc(150, 60, 40, 0, Math.PI, false);
         ctx.stroke();
 
-        // Línea horizontal más gruesa
+        // Tercer arco: círculo completo
+        ctx.beginPath();
+        ctx.arc(240, 60, 40, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Arco relleno
+        ctx.beginPath();
+        ctx.arc(100, 150, 35, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Arco de 3/4 de círculo
         ctx.beginPath();
         ctx.lineWidth = 5;
-        ctx.moveTo(30, 180);
-        ctx.lineTo(270, 180);
+        ctx.arc(200, 150, 35, 0, Math.PI * 1.5);
         ctx.stroke();
     }
 }
