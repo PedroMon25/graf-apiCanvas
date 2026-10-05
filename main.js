@@ -6,23 +6,27 @@ function draw() {
 
         const ctx = canvas.getContext("2d");
 
-        // Cara
+        // Primer grupo de líneas
         ctx.beginPath();
-        ctx.arc(150, 100, 80, 0, Math.PI * 2, true);
+        ctx.moveTo(20, 20);
+        ctx.lineTo(100, 100);
+        ctx.lineTo(180, 20);
+        ctx.stroke();
 
-        // Boca
-        ctx.moveTo(205, 100);
-        ctx.arc(150, 100, 55, 0, Math.PI, false);
+        // Segundo grupo de líneas
+        ctx.beginPath();
+        ctx.moveTo(20, 150);
+        ctx.lineTo(80, 100);
+        ctx.lineTo(140, 150);
+        ctx.lineTo(200, 100);
+        ctx.lineTo(260, 150);
+        ctx.stroke();
 
-        // Ojo izquierdo
-        ctx.moveTo(125, 75);
-        ctx.arc(115, 75, 10, 0, Math.PI * 2, true);
-
-        // Ojo derecho
-        ctx.moveTo(195, 75);
-        ctx.arc(185, 75, 10, 0, Math.PI * 2, true);
-
-        // Dibujar
+        // Línea horizontal más gruesa
+        ctx.beginPath();
+        ctx.lineWidth = 5;
+        ctx.moveTo(30, 180);
+        ctx.lineTo(270, 180);
         ctx.stroke();
     }
 }
