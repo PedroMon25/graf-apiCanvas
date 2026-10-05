@@ -6,19 +6,23 @@ function draw() {
 
         const ctx = canvas.getContext("2d");
 
-        // Primer triángulo: relleno
+        // Cara
         ctx.beginPath();
-        ctx.moveTo(75, 25);
-        ctx.lineTo(25, 125);
-        ctx.lineTo(125, 125);
-        ctx.fill();
+        ctx.arc(150, 100, 80, 0, Math.PI * 2, true);
 
-        // Segundo triángulo: contorno
-        ctx.beginPath();
-        ctx.moveTo(200, 25);
-        ctx.lineTo(150, 125);
-        ctx.lineTo(250, 125);
-        ctx.closePath();
+        // Boca
+        ctx.moveTo(205, 100);
+        ctx.arc(150, 100, 55, 0, Math.PI, false);
+
+        // Ojo izquierdo
+        ctx.moveTo(125, 75);
+        ctx.arc(115, 75, 10, 0, Math.PI * 2, true);
+
+        // Ojo derecho
+        ctx.moveTo(195, 75);
+        ctx.arc(185, 75, 10, 0, Math.PI * 2, true);
+
+        // Dibujar
         ctx.stroke();
     }
 }
