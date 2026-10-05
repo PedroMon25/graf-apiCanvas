@@ -6,30 +6,44 @@ function draw() {
 
         const ctx = canvas.getContext("2d");
 
-        // Primer arco: semicírculo superior
+        // -------------------------
+        // CURVA CUADRÁTICA
+        // -------------------------
         ctx.beginPath();
-        ctx.arc(60, 60, 40, 0, Math.PI, true);
+        ctx.moveTo(20, 80);
+
+        // Punto de control: (80, 10)
+        // Punto final: (140, 80)
+        ctx.quadraticCurveTo(80, 10, 140, 80);
+
+        ctx.lineWidth = 4;
         ctx.stroke();
 
-        // Segundo arco: semicírculo inferior
+
+        // -------------------------
+        // CURVA BÉZIER
+        // -------------------------
         ctx.beginPath();
-        ctx.arc(150, 60, 40, 0, Math.PI, false);
+        ctx.moveTo(160, 80);
+
+        // Primer punto de control: (180, 10)
+        // Segundo punto de control: (260, 150)
+        // Punto final: (280, 80)
+        ctx.bezierCurveTo(
+            180, 10,
+            260, 150,
+            280, 80
+        );
+
         ctx.stroke();
 
-        // Tercer arco: círculo completo
-        ctx.beginPath();
-        ctx.arc(240, 60, 40, 0, Math.PI * 2);
-        ctx.stroke();
 
-        // Arco relleno
+        // -------------------------
+        // SEGUNDA CURVA CUADRÁTICA
+        // -------------------------
         ctx.beginPath();
-        ctx.arc(100, 150, 35, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Arco de 3/4 de círculo
-        ctx.beginPath();
-        ctx.lineWidth = 5;
-        ctx.arc(200, 150, 35, 0, Math.PI * 1.5);
+        ctx.moveTo(30, 160);
+        ctx.quadraticCurveTo(150, 90, 270, 160);
         ctx.stroke();
     }
 }
