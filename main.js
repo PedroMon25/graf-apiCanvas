@@ -6,10 +6,17 @@ function draw() {
 
         const ctx = canvas.getContext("2d");
 
-        ctx.fillRect(25, 25, 100, 100);
+        // Rectángulo azul relleno
+        ctx.fillStyle = "rgb(0, 100, 255)";
+        ctx.fillRect(30, 30, 120, 80);
 
-        ctx.clearRect(45, 45, 60, 60);
+        // Rectángulo rojo
+        ctx.fillStyle = "rgb(255, 0, 0)";
+        ctx.fillRect(180, 30, 80, 80);
 
-        ctx.strokeRect(50, 50, 50, 50);
+        // Rectángulo solamente con borde
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(70, 130, 150, 50);
     }
 }
